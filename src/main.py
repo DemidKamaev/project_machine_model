@@ -1,24 +1,16 @@
-# This is a sample Python script.
+from src.BankAccount import BankAccount
+from src.AbstractAccount import AbstractAccount
+from src.exceptions import AccountFrozenError
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+acc = BankAccount(owner="Demid")
+acc.deposit(10000)
+acc.withdraw(350)
+print(acc)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+acc_frozen = BankAccount(owner="Test", status=AbstractAccount.STATUS_FROZEN)
+try:
+    acc_frozen.deposit(1000)
+except AccountFrozenError as e:
+    print(e)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-dasha_one_love = "06"
-
-demid_salam = "19"
-
-count = dasha_one_love + demid_salam
-
-print(count)
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
