@@ -13,4 +13,12 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
+dasha_one_love = "06"
+
+demid_salam = "19"
+
+count = dasha_one_love + demid_salam
+
+print(count)
+
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
