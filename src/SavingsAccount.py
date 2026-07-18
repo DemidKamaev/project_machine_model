@@ -1,6 +1,5 @@
 from BankAccount import BankAccount
-from AbstractAccount import AbstractAccount
-from exceptions import InvalidOperationError
+from exceptions import InvalidOperationError, InsufficientFundsError
 
 
 class SavingsAccount(BankAccount):
@@ -9,18 +8,9 @@ class SavingsAccount(BankAccount):
             owner: str,
             min_balance: float,
             monthly_rate: float,
-            account_id: str | None = None,
-            balance: float = 0.0,
-            status: str = AbstractAccount.STATUS_ACTIVE,
-            currency: str = "RUB",
+            **kwargs,
     ):
-        super().__init__(
-            account_id=account_id,
-            owner=owner,
-            balance=balance,
-            status=status,
-            currency=currency,
-        )
+        super().__init__(owner=owner, **kwargs)
         self.min_balance = min_balance
         self.monthly_rate = monthly_rate
 
@@ -31,6 +21,9 @@ class SavingsAccount(BankAccount):
     def withdraw(self, amount: float) -> None:
         self._validate_amount(amount)
         self._check_status()
+
+        if amount > self._balance:
+            raise InsufficientFundsError("Insufficient funds")
 
         if self._balance - amount < self.min_balance:
             raise InvalidOperationError("Cannot go below minimum balance")
