@@ -16,3 +16,18 @@ class InvalidOperationError(Exception):
 class InsufficientFundsError(Exception):
     """Insufficient funds in the account"""
     pass
+
+
+class ClientTooYoungError(Exception):
+    """The client's age is less than 18 years old"""
+    pass
+
+
+class ClientBlockedError(Exception):
+    """Client is blocked"""
+    pass
+
+
+class OperationNotAllowedError(Exception):
+    """Operation is not allowed (night hours, security rules, etc."""
+    pass
