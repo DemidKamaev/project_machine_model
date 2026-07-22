@@ -26,9 +26,14 @@ class Bank:
         self.suspicious_actions: list[str] = []
         self.authenticated_clients: set[str] = set()
 
+        self.enforce_night_ban = True
+
     # --- internal transfers ----------------------------
 
     def _check_operating_hours(self) -> None:
+        if not self.enforce_night_ban:
+            return
+
         hour = datetime.now().hour
         if 0 <= hour < 5:
             msg = "Operations unavailable from 00:00 to 05:00"
