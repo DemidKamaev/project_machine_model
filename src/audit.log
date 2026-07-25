@@ -1,0 +1,42 @@
+2026-07-25T19:41:07.015374 | info | Risk check: low
+2026-07-25T20:43:33.433862 | info | Risk check: low
+2026-07-25T20:44:54.192784 | info | Risk check: low
+2026-07-25T20:44:54.193785 | info | Risk check: low
+2026-07-25T20:45:04.280007 | info | Risk check: low
+2026-07-25T20:45:04.281008 | info | Risk check: low
+2026-07-25T20:59:16.030078 | info | Risk check: low
+2026-07-25T20:59:16.031072 | info | Risk check: low
+2026-07-25T21:03:44.774213 | info | Risk check: low
+2026-07-25T21:03:44.774213 | info | Risk check: low
+2026-07-25T21:03:44.775213 | info | Risk check: low
+2026-07-25T21:05:07.533205 | info | Risk check: low
+2026-07-25T21:05:07.533205 | info | Risk check: low
+2026-07-25T21:05:07.533205 | info | Risk check: low
+2026-07-25T21:05:07.534205 | info | Risk check: medium
+2026-07-25T21:06:45.166937 | info | Risk check: low
+2026-07-25T21:06:45.166937 | info | Risk check: low
+2026-07-25T21:06:45.167931 | info | Risk check: low
+2026-07-25T21:06:45.167931 | info | Risk check: medium
+2026-07-25T21:06:45.167931 | info | Risk check: medium
+2026-07-25T21:06:45.167931 | error | Transaction failed: Insufficient funds
+2026-07-25T21:17:50.012816 | info | Risk check: low
+2026-07-25T21:17:50.013831 | info | Risk check: low
+2026-07-25T21:17:50.013831 | info | Risk check: low
+2026-07-25T21:17:50.013831 | info | Risk check: medium
+2026-07-25T21:17:50.014831 | info | Risk check: medium
+2026-07-25T21:17:50.014831 | error | Transaction failed: Insufficient funds
+2026-07-25T21:18:17.652131 | info | Risk check: low
+2026-07-25T21:18:17.652131 | info | Risk check: low
+2026-07-25T21:18:17.652131 | info | Risk check: low
+2026-07-25T21:18:17.653131 | info | Risk check: medium
+2026-07-25T21:18:17.653131 | info | Risk check: medium
+2026-07-25T21:21:41.834049 | info | Risk check: low
+2026-07-25T21:21:41.834049 | info | Risk check: medium
+2026-07-25T21:21:41.835049 | info | Risk check: medium
+2026-07-25T21:21:41.835049 | info | Risk check: low
+2026-07-25T21:21:41.835049 | info | Risk check: low
+2026-07-25T21:21:41.835049 | info | Risk check: medium
+2026-07-25T21:21:41.835049 | info | Risk check: medium
+2026-07-25T21:21:41.835049 | info | Risk check: medium
+2026-07-25T21:21:41.835049 | info | Risk check: high
+2026-07-25T21:21:41.835049 | critical | Transaction blocked (high risk)
