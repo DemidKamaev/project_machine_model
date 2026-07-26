@@ -486,3 +486,528 @@
 2026-07-26T10:52:36.589363 | info | Risk check: low
 2026-07-26T10:52:36.590362 | info | Risk check: low
 2026-07-26T10:52:36.590362 | info | Risk check: low
+2026-07-26T13:58:30.547434 | info | Risk check: low
+2026-07-26T13:58:30.548433 | error | Transaction failed: Recipient not found
+2026-07-26T13:58:30.548433 | info | Risk check: low
+2026-07-26T13:58:30.548433 | info | Risk check: low
+2026-07-26T13:58:30.549433 | info | Risk check: low
+2026-07-26T13:58:30.549926 | info | Risk check: low
+2026-07-26T13:58:30.550251 | info | Risk check: low
+2026-07-26T13:58:30.550555 | error | Transaction failed: Recipient not found
+2026-07-26T13:58:30.550742 | info | Risk check: low
+2026-07-26T13:58:30.550955 | info | Risk check: medium
+2026-07-26T13:58:30.551326 | error | Transaction failed: Insufficient funds
+2026-07-26T13:58:30.551521 | info | Risk check: low
+2026-07-26T13:58:30.551521 | info | Risk check: low
+2026-07-26T13:58:30.551521 | info | Risk check: low
+2026-07-26T13:58:30.551521 | error | Transaction failed: Recipient not found
+2026-07-26T13:58:30.551521 | info | Risk check: low
+2026-07-26T13:58:30.551521 | info | Risk check: low
+2026-07-26T13:58:30.552507 | info | Risk check: low
+2026-07-26T13:58:30.552779 | info | Risk check: medium
+2026-07-26T13:58:30.552981 | error | Transaction failed: Insufficient funds
+2026-07-26T13:58:30.553185 | info | Risk check: low
+2026-07-26T13:58:30.553185 | error | Transaction failed: Recipient not found
+2026-07-26T13:58:30.553474 | info | Risk check: low
+2026-07-26T13:58:30.553474 | info | Risk check: low
+2026-07-26T13:58:30.554057 | info | Risk check: low
+2026-07-26T13:58:30.554073 | info | Risk check: low
+2026-07-26T13:58:30.554073 | info | Risk check: low
+2026-07-26T13:58:30.554687 | info | Risk check: low
+2026-07-26T13:58:30.554773 | info | Risk check: low
+2026-07-26T13:58:30.554773 | info | Risk check: low
+2026-07-26T13:58:30.555236 | error | Transaction failed: Recipient not found
+2026-07-26T13:58:30.555306 | info | Risk check: low
+2026-07-26T13:58:30.555306 | info | Risk check: low
+2026-07-26T13:58:30.555807 | info | Risk check: low
+2026-07-26T13:58:30.555918 | info | Risk check: low
+2026-07-26T13:58:30.556092 | error | Transaction failed: Recipient not found
+2026-07-26T13:58:30.556092 | info | Risk check: low
+2026-07-26T13:58:30.556092 | info | Risk check: low
+2026-07-26T13:58:30.556523 | info | Risk check: low
+2026-07-26T13:58:30.556523 | info | Risk check: high
+2026-07-26T13:58:30.556523 | critical | Transaction blocked (high risk)
+2026-07-26T13:58:30.557026 | info | Risk check: low
+2026-07-26T13:58:30.557026 | info | Risk check: low
+2026-07-26T13:58:30.557386 | info | Risk check: medium
+2026-07-26T13:59:21.513129 | info | Risk check: low
+2026-07-26T13:59:21.513129 | error | Transaction failed: Recipient not found
+2026-07-26T13:59:21.513129 | info | Risk check: low
+2026-07-26T13:59:21.514210 | info | Risk check: low
+2026-07-26T13:59:21.515265 | info | Risk check: low
+2026-07-26T13:59:21.515265 | info | Risk check: low
+2026-07-26T13:59:21.515265 | info | Risk check: low
+2026-07-26T13:59:21.515265 | error | Transaction failed: Recipient not found
+2026-07-26T13:59:21.515265 | info | Risk check: low
+2026-07-26T13:59:21.516264 | info | Risk check: medium
+2026-07-26T13:59:21.516264 | error | Transaction failed: Insufficient funds
+2026-07-26T13:59:21.516264 | info | Risk check: low
+2026-07-26T13:59:21.517276 | info | Risk check: low
+2026-07-26T13:59:21.517276 | info | Risk check: low
+2026-07-26T13:59:21.517276 | info | Risk check: low
+2026-07-26T13:59:21.517276 | info | Risk check: low
+2026-07-26T13:59:21.517276 | info | Risk check: medium
+2026-07-26T13:59:21.517276 | error | Transaction failed: Insufficient funds
+2026-07-26T13:59:21.518264 | info | Risk check: low
+2026-07-26T13:59:21.518264 | error | Transaction failed: Recipient not found
+2026-07-26T13:59:21.518264 | info | Risk check: medium
+2026-07-26T13:59:21.518264 | info | Risk check: low
+2026-07-26T13:59:21.518264 | info | Risk check: low
+2026-07-26T13:59:21.518264 | info | Risk check: low
+2026-07-26T13:59:21.518264 | info | Risk check: low
+2026-07-26T13:59:21.519272 | error | Transaction failed: Recipient not found
+2026-07-26T13:59:21.519272 | info | Risk check: high
+2026-07-26T13:59:21.519272 | critical | Transaction blocked (high risk)
+2026-07-26T13:59:21.519272 | info | Risk check: low
+2026-07-26T13:59:21.519272 | info | Risk check: low
+2026-07-26T13:59:21.519272 | info | Risk check: low
+2026-07-26T13:59:21.519272 | error | Transaction failed: Recipient not found
+2026-07-26T13:59:21.519272 | info | Risk check: low
+2026-07-26T13:59:21.520272 | info | Risk check: high
+2026-07-26T13:59:21.520272 | critical | Transaction blocked (high risk)
+2026-07-26T13:59:21.520272 | info | Risk check: low
+2026-07-26T13:59:21.520272 | info | Risk check: low
+2026-07-26T13:59:21.520272 | error | Transaction failed: Recipient not found
+2026-07-26T13:59:21.520272 | info | Risk check: low
+2026-07-26T13:59:21.520272 | info | Risk check: low
+2026-07-26T13:59:21.521356 | info | Risk check: high
+2026-07-26T13:59:21.521356 | critical | Transaction blocked (high risk)
+2026-07-26T13:59:21.521356 | info | Risk check: high
+2026-07-26T13:59:21.521356 | critical | Transaction blocked (high risk)
+2026-07-26T13:59:21.521356 | info | Risk check: low
+2026-07-26T13:59:21.521356 | info | Risk check: low
+2026-07-26T13:59:21.521356 | info | Risk check: low
+2026-07-26T13:59:21.521356 | info | Risk check: low
+2026-07-26T14:39:53.539991 | info | Risk check: low
+2026-07-26T14:39:53.539991 | error | Transaction failed: Recipient not found
+2026-07-26T14:39:53.541102 | info | Risk check: low
+2026-07-26T14:39:53.541102 | info | Risk check: low
+2026-07-26T14:39:53.541102 | info | Risk check: low
+2026-07-26T14:39:53.541102 | info | Risk check: low
+2026-07-26T14:39:53.542103 | error | Transaction failed: Recipient not found
+2026-07-26T14:39:53.542103 | info | Risk check: medium
+2026-07-26T14:39:53.542103 | error | Transaction failed: Overdraft limit exceeded
+2026-07-26T14:39:53.542103 | info | Risk check: low
+2026-07-26T14:39:53.543108 | info | Risk check: low
+2026-07-26T14:39:53.543108 | error | Transaction failed: Recipient not found
+2026-07-26T14:39:53.543108 | info | Risk check: low
+2026-07-26T14:39:53.543108 | info | Risk check: low
+2026-07-26T14:39:53.543108 | info | Risk check: low
+2026-07-26T14:39:53.543108 | info | Risk check: medium
+2026-07-26T14:39:53.544110 | error | Transaction failed: Insufficient funds
+2026-07-26T14:39:53.544110 | info | Risk check: low
+2026-07-26T14:39:53.544110 | error | Transaction failed: Recipient not found
+2026-07-26T14:39:53.544110 | info | Risk check: low
+2026-07-26T14:39:53.544110 | info | Risk check: low
+2026-07-26T14:39:53.544110 | info | Risk check: low
+2026-07-26T14:39:53.544110 | info | Risk check: low
+2026-07-26T14:39:53.545110 | error | Transaction failed: Recipient not found
+2026-07-26T14:39:53.545110 | info | Risk check: medium
+2026-07-26T14:39:53.545110 | error | Transaction failed: Insufficient funds
+2026-07-26T14:39:53.545110 | info | Risk check: low
+2026-07-26T14:39:53.545110 | info | Risk check: low
+2026-07-26T14:39:53.545110 | info | Risk check: low
+2026-07-26T14:39:53.545110 | info | Risk check: low
+2026-07-26T14:39:53.545110 | error | Transaction failed: Recipient not found
+2026-07-26T14:39:53.546110 | info | Risk check: low
+2026-07-26T14:39:53.546110 | info | Risk check: medium
+2026-07-26T14:39:53.546110 | error | Transaction failed: Insufficient funds
+2026-07-26T14:39:53.546110 | info | Risk check: low
+2026-07-26T14:39:53.546110 | info | Risk check: low
+2026-07-26T14:39:53.546110 | error | Transaction failed: Recipient not found
+2026-07-26T14:39:53.546110 | info | Risk check: low
+2026-07-26T14:39:53.547110 | info | Risk check: low
+2026-07-26T14:39:53.547110 | info | Risk check: low
+2026-07-26T14:39:53.547110 | info | Risk check: low
+2026-07-26T14:39:53.547110 | error | Transaction failed: Recipient not found
+2026-07-26T14:39:53.547110 | info | Risk check: medium
+2026-07-26T14:39:53.547110 | info | Risk check: low
+2026-07-26T14:39:53.547110 | info | Risk check: low
+2026-07-26T14:39:53.548110 | info | Risk check: low
+2026-07-26T14:45:36.105110 | info | Risk check: low
+2026-07-26T14:45:36.105110 | error | Transaction failed: Recipient not found
+2026-07-26T14:45:36.105110 | info | Risk check: low
+2026-07-26T14:45:36.106104 | info | Risk check: low
+2026-07-26T14:45:36.106104 | info | Risk check: low
+2026-07-26T14:45:36.106104 | info | Risk check: low
+2026-07-26T14:45:36.106104 | info | Risk check: low
+2026-07-26T14:45:36.106104 | info | Risk check: medium
+2026-07-26T14:45:36.107104 | error | Transaction failed: Insufficient funds
+2026-07-26T14:45:36.107104 | info | Risk check: low
+2026-07-26T14:45:36.107104 | info | Risk check: low
+2026-07-26T14:45:36.107104 | error | Transaction failed: Recipient not found
+2026-07-26T14:45:36.107104 | info | Risk check: low
+2026-07-26T14:45:36.107104 | info | Risk check: low
+2026-07-26T14:45:36.108101 | info | Risk check: low
+2026-07-26T14:45:36.108101 | info | Risk check: medium
+2026-07-26T14:45:36.108101 | error | Transaction failed: Insufficient funds
+2026-07-26T14:45:36.108101 | info | Risk check: low
+2026-07-26T14:45:36.108101 | error | Transaction failed: Recipient not found
+2026-07-26T14:45:36.108101 | info | Risk check: low
+2026-07-26T14:45:36.108101 | info | Risk check: low
+2026-07-26T14:45:36.108101 | info | Risk check: low
+2026-07-26T14:45:36.108101 | info | Risk check: medium
+2026-07-26T14:45:36.109102 | error | Transaction failed: Insufficient funds
+2026-07-26T14:45:36.109102 | info | Risk check: low
+2026-07-26T14:45:36.109102 | info | Risk check: medium
+2026-07-26T14:45:36.109102 | info | Risk check: medium
+2026-07-26T14:45:36.109102 | error | Transaction failed: Recipient not found
+2026-07-26T14:45:36.109102 | info | Risk check: low
+2026-07-26T14:45:36.109102 | info | Risk check: high
+2026-07-26T14:45:36.109102 | critical | Transaction blocked (high risk)
+2026-07-26T14:45:36.109102 | info | Risk check: low
+2026-07-26T14:45:36.110102 | info | Risk check: low
+2026-07-26T14:45:36.110102 | error | Transaction failed: Recipient not found
+2026-07-26T14:45:36.110102 | info | Risk check: low
+2026-07-26T14:45:36.110102 | info | Risk check: low
+2026-07-26T14:45:36.110102 | info | Risk check: low
+2026-07-26T14:45:36.110102 | info | Risk check: low
+2026-07-26T14:45:36.110102 | info | Risk check: low
+2026-07-26T14:45:36.110102 | error | Transaction failed: Recipient not found
+2026-07-26T14:45:36.111102 | info | Risk check: low
+2026-07-26T14:45:36.111102 | info | Risk check: low
+2026-07-26T14:45:36.111102 | info | Risk check: low
+2026-07-26T14:45:36.111102 | info | Risk check: low
+2026-07-26T16:02:59.756535 | info | Risk check: low
+2026-07-26T16:02:59.756535 | error | Transaction failed: Recipient not found
+2026-07-26T16:02:59.756535 | info | Risk check: low
+2026-07-26T16:02:59.756535 | info | Risk check: low
+2026-07-26T16:02:59.756535 | info | Risk check: low
+2026-07-26T16:02:59.756535 | info | Risk check: low
+2026-07-26T16:02:59.756535 | error | Transaction failed: Recipient not found
+2026-07-26T16:02:59.771947 | info | Risk check: low
+2026-07-26T16:02:59.772318 | info | Risk check: medium
+2026-07-26T16:02:59.772535 | error | Transaction failed: Insufficient funds
+2026-07-26T16:02:59.772535 | info | Risk check: low
+2026-07-26T16:02:59.773589 | info | Risk check: low
+2026-07-26T16:02:59.773589 | info | Risk check: low
+2026-07-26T16:02:59.773589 | error | Transaction failed: Recipient not found
+2026-07-26T16:02:59.774585 | info | Risk check: low
+2026-07-26T16:02:59.774585 | info | Risk check: low
+2026-07-26T16:02:59.774585 | info | Risk check: medium
+2026-07-26T16:02:59.774585 | error | Transaction failed: Insufficient funds
+2026-07-26T16:02:59.774585 | info | Risk check: low
+2026-07-26T16:02:59.774585 | error | Transaction failed: Recipient not found
+2026-07-26T16:02:59.775583 | info | Risk check: low
+2026-07-26T16:02:59.775583 | info | Risk check: low
+2026-07-26T16:02:59.775583 | info | Risk check: low
+2026-07-26T16:02:59.775583 | info | Risk check: low
+2026-07-26T16:02:59.775583 | error | Transaction failed: Recipient not found
+2026-07-26T16:02:59.775583 | info | Risk check: medium
+2026-07-26T16:02:59.775583 | error | Transaction failed: Insufficient funds
+2026-07-26T16:02:59.775583 | info | Risk check: low
+2026-07-26T16:02:59.776583 | info | Risk check: low
+2026-07-26T16:02:59.776583 | info | Risk check: low
+2026-07-26T16:02:59.776583 | error | Transaction failed: Recipient not found
+2026-07-26T16:02:59.776583 | info | Risk check: low
+2026-07-26T16:02:59.776583 | info | Risk check: low
+2026-07-26T16:02:59.776583 | info | Risk check: medium
+2026-07-26T16:02:59.776583 | error | Transaction failed: Insufficient funds
+2026-07-26T16:02:59.777583 | info | Risk check: medium
+2026-07-26T16:02:59.777583 | info | Risk check: low
+2026-07-26T16:02:59.777583 | error | Transaction failed: Recipient not found
+2026-07-26T16:02:59.777583 | info | Risk check: low
+2026-07-26T16:02:59.777583 | info | Risk check: low
+2026-07-26T16:02:59.777583 | info | Risk check: low
+2026-07-26T16:02:59.777583 | info | Risk check: low
+2026-07-26T16:02:59.777583 | error | Transaction failed: Recipient not found
+2026-07-26T16:02:59.778583 | info | Risk check: high
+2026-07-26T16:02:59.778583 | critical | Transaction blocked (high risk)
+2026-07-26T16:02:59.778583 | info | Risk check: high
+2026-07-26T16:02:59.778583 | critical | Transaction blocked (high risk)
+2026-07-26T16:02:59.778583 | info | Risk check: low
+2026-07-26T16:02:59.778583 | info | Risk check: high
+2026-07-26T16:02:59.778583 | critical | Transaction blocked (high risk)
+2026-07-26T16:14:47.442049 | info | Risk check: low
+2026-07-26T16:14:47.443047 | error | Transaction failed: Recipient not found
+2026-07-26T16:14:47.443047 | info | Risk check: low
+2026-07-26T16:14:47.443047 | info | Risk check: low
+2026-07-26T16:14:47.444053 | info | Risk check: low
+2026-07-26T16:14:47.444053 | error | Transaction failed: Recipient not found
+2026-07-26T16:14:47.444053 | info | Risk check: low
+2026-07-26T16:14:47.444053 | info | Risk check: medium
+2026-07-26T16:14:47.444053 | error | Transaction failed: Overdraft limit exceeded
+2026-07-26T16:14:47.444053 | info | Risk check: low
+2026-07-26T16:14:47.445061 | info | Risk check: low
+2026-07-26T16:14:47.445061 | info | Risk check: low
+2026-07-26T16:14:47.445061 | error | Transaction failed: Recipient not found
+2026-07-26T16:14:47.445061 | info | Risk check: low
+2026-07-26T16:14:47.445061 | info | Risk check: low
+2026-07-26T16:14:47.445061 | info | Risk check: low
+2026-07-26T16:14:47.445061 | info | Risk check: medium
+2026-07-26T16:14:47.445061 | error | Transaction failed: Insufficient funds
+2026-07-26T16:14:47.445061 | info | Risk check: low
+2026-07-26T16:14:47.446092 | error | Transaction failed: Recipient not found
+2026-07-26T16:14:47.446092 | info | Risk check: low
+2026-07-26T16:14:47.446092 | info | Risk check: low
+2026-07-26T16:14:47.446092 | info | Risk check: low
+2026-07-26T16:14:47.446092 | info | Risk check: low
+2026-07-26T16:14:47.446092 | info | Risk check: medium
+2026-07-26T16:14:47.446092 | error | Transaction failed: Insufficient funds
+2026-07-26T16:14:47.446092 | info | Risk check: low
+2026-07-26T16:14:47.447093 | info | Risk check: low
+2026-07-26T16:14:47.447093 | info | Risk check: low
+2026-07-26T16:14:47.447093 | info | Risk check: low
+2026-07-26T16:14:47.447093 | error | Transaction failed: Recipient not found
+2026-07-26T16:14:47.447093 | info | Risk check: low
+2026-07-26T16:14:47.447093 | info | Risk check: medium
+2026-07-26T16:14:47.447093 | error | Transaction failed: Insufficient funds
+2026-07-26T16:14:47.447093 | info | Risk check: low
+2026-07-26T16:14:47.448093 | info | Risk check: low
+2026-07-26T16:14:47.448093 | error | Transaction failed: Recipient not found
+2026-07-26T16:14:47.448093 | info | Risk check: low
+2026-07-26T16:14:47.448093 | info | Risk check: low
+2026-07-26T16:14:47.448093 | info | Risk check: low
+2026-07-26T16:14:47.448093 | info | Risk check: low
+2026-07-26T16:14:47.448093 | error | Transaction failed: Recipient not found
+2026-07-26T16:14:47.448093 | info | Risk check: low
+2026-07-26T16:14:47.449092 | info | Risk check: low
+2026-07-26T16:14:47.449092 | info | Risk check: high
+2026-07-26T16:14:47.449092 | critical | Transaction blocked (high risk)
+2026-07-26T16:14:47.449092 | info | Risk check: low
+2026-07-26T16:23:28.243481 | info | Risk check: low
+2026-07-26T16:23:28.243481 | error | Transaction failed: Recipient not found
+2026-07-26T16:23:28.244481 | info | Risk check: low
+2026-07-26T16:23:28.244481 | info | Risk check: low
+2026-07-26T16:23:28.244481 | info | Risk check: low
+2026-07-26T16:23:28.244481 | info | Risk check: low
+2026-07-26T16:23:28.244481 | error | Transaction failed: Recipient not found
+2026-07-26T16:23:28.244481 | info | Risk check: low
+2026-07-26T16:23:28.244481 | info | Risk check: medium
+2026-07-26T16:23:28.245481 | error | Transaction failed: Insufficient funds
+2026-07-26T16:23:28.245481 | info | Risk check: low
+2026-07-26T16:23:28.245481 | info | Risk check: low
+2026-07-26T16:23:28.245481 | info | Risk check: low
+2026-07-26T16:23:28.245481 | error | Transaction failed: Recipient not found
+2026-07-26T16:23:28.245481 | info | Risk check: low
+2026-07-26T16:23:28.246481 | info | Risk check: low
+2026-07-26T16:23:28.246481 | info | Risk check: low
+2026-07-26T16:23:28.246481 | info | Risk check: medium
+2026-07-26T16:23:28.246481 | error | Transaction failed: Insufficient funds
+2026-07-26T16:23:28.246481 | info | Risk check: low
+2026-07-26T16:23:28.246481 | info | Risk check: low
+2026-07-26T16:23:28.246481 | info | Risk check: low
+2026-07-26T16:23:28.246481 | info | Risk check: low
+2026-07-26T16:23:28.247481 | info | Risk check: high
+2026-07-26T16:23:28.247481 | critical | Transaction blocked (high risk)
+2026-07-26T16:23:28.247481 | info | Risk check: low
+2026-07-26T16:23:28.247481 | info | Risk check: low
+2026-07-26T16:23:28.247481 | info | Risk check: low
+2026-07-26T16:23:28.247481 | info | Risk check: low
+2026-07-26T16:23:28.248482 | error | Transaction failed: Recipient not found
+2026-07-26T16:23:28.248482 | info | Risk check: low
+2026-07-26T16:23:28.248482 | info | Risk check: low
+2026-07-26T16:23:28.248482 | info | Risk check: medium
+2026-07-26T16:23:28.248482 | error | Transaction failed: Insufficient funds
+2026-07-26T16:23:28.248482 | info | Risk check: low
+2026-07-26T16:23:28.249480 | error | Transaction failed: Recipient not found
+2026-07-26T16:23:28.249480 | info | Risk check: low
+2026-07-26T16:23:28.249480 | info | Risk check: low
+2026-07-26T16:23:28.249480 | info | Risk check: low
+2026-07-26T16:23:28.249480 | info | Risk check: low
+2026-07-26T16:23:28.249480 | info | Risk check: high
+2026-07-26T16:23:28.249480 | critical | Transaction blocked (high risk)
+2026-07-26T16:23:28.249480 | info | Risk check: high
+2026-07-26T16:23:28.249480 | critical | Transaction blocked (high risk)
+2026-07-26T16:23:28.250481 | info | Risk check: low
+2026-07-26T16:23:28.250481 | info | Risk check: high
+2026-07-26T16:23:28.250481 | critical | Transaction blocked (high risk)
+2026-07-26T16:37:43.449955 | info | Risk check: low
+2026-07-26T16:37:43.450956 | error | Transaction failed: Recipient not found
+2026-07-26T16:37:43.450956 | info | Risk check: low
+2026-07-26T16:37:43.450956 | info | Risk check: low
+2026-07-26T16:37:43.450956 | info | Risk check: low
+2026-07-26T16:37:43.451955 | info | Risk check: low
+2026-07-26T16:37:43.451955 | error | Transaction failed: Recipient not found
+2026-07-26T16:37:43.451955 | info | Risk check: low
+2026-07-26T16:37:43.451955 | info | Risk check: medium
+2026-07-26T16:37:43.451955 | error | Transaction failed: Insufficient funds
+2026-07-26T16:37:43.451955 | info | Risk check: low
+2026-07-26T16:37:43.451955 | info | Risk check: low
+2026-07-26T16:37:43.451955 | info | Risk check: low
+2026-07-26T16:37:43.451955 | error | Transaction failed: Recipient not found
+2026-07-26T16:37:43.452955 | info | Risk check: low
+2026-07-26T16:37:43.452955 | info | Risk check: low
+2026-07-26T16:37:43.452955 | info | Risk check: low
+2026-07-26T16:37:43.452955 | info | Risk check: medium
+2026-07-26T16:37:43.452955 | error | Transaction failed: Insufficient funds
+2026-07-26T16:37:43.452955 | info | Risk check: low
+2026-07-26T16:37:43.452955 | error | Transaction failed: Recipient not found
+2026-07-26T16:37:43.452955 | info | Risk check: low
+2026-07-26T16:37:43.454014 | info | Risk check: low
+2026-07-26T16:37:43.454014 | info | Risk check: low
+2026-07-26T16:37:43.454014 | info | Risk check: low
+2026-07-26T16:37:43.454014 | info | Risk check: low
+2026-07-26T16:37:43.454014 | error | Transaction failed: Recipient not found
+2026-07-26T16:37:43.454014 | info | Risk check: medium
+2026-07-26T16:37:43.454014 | error | Transaction failed: Insufficient funds
+2026-07-26T16:37:43.454014 | info | Risk check: low
+2026-07-26T16:37:43.454014 | info | Risk check: low
+2026-07-26T16:37:43.455016 | info | Risk check: medium
+2026-07-26T16:37:43.455016 | info | Risk check: low
+2026-07-26T16:37:43.455016 | error | Transaction failed: Recipient not found
+2026-07-26T16:37:43.455016 | info | Risk check: high
+2026-07-26T16:37:43.455016 | critical | Transaction blocked (high risk)
+2026-07-26T16:37:43.455016 | info | Risk check: low
+2026-07-26T16:37:43.455016 | info | Risk check: medium
+2026-07-26T16:37:43.455016 | error | Transaction failed: Insufficient funds
+2026-07-26T16:37:43.456017 | info | Risk check: low
+2026-07-26T16:37:43.456017 | info | Risk check: low
+2026-07-26T16:37:43.456017 | error | Transaction failed: Recipient not found
+2026-07-26T16:37:43.456017 | info | Risk check: low
+2026-07-26T16:37:43.456017 | info | Risk check: low
+2026-07-26T16:37:43.456017 | info | Risk check: low
+2026-07-26T16:37:43.457017 | info | Risk check: low
+2026-07-26T16:37:43.457017 | info | Risk check: low
+2026-07-26T16:37:43.457017 | error | Transaction failed: Recipient not found
+2026-07-26T16:37:43.457017 | info | Risk check: low
+2026-07-26T16:37:43.457017 | info | Risk check: low
+2026-07-26T16:37:43.457017 | info | Risk check: high
+2026-07-26T16:37:43.457017 | critical | Transaction blocked (high risk)
+2026-07-26T16:37:43.457017 | info | Risk check: high
+2026-07-26T16:37:43.457017 | critical | Transaction blocked (high risk)
+2026-07-26T16:41:55.893256 | info | Risk check: low
+2026-07-26T16:41:55.893256 | error | Transaction failed: Recipient not found
+2026-07-26T16:41:55.894247 | info | Risk check: low
+2026-07-26T16:41:55.894247 | info | Risk check: low
+2026-07-26T16:41:55.894247 | info | Risk check: low
+2026-07-26T16:41:55.894247 | info | Risk check: low
+2026-07-26T16:41:55.894247 | info | Risk check: low
+2026-07-26T16:41:55.895255 | error | Transaction failed: Recipient not found
+2026-07-26T16:41:55.895376 | info | Risk check: low
+2026-07-26T16:41:55.895376 | info | Risk check: low
+2026-07-26T16:41:55.895376 | error | Transaction failed: Recipient not found
+2026-07-26T16:41:55.895376 | info | Risk check: low
+2026-07-26T16:41:55.895376 | info | Risk check: low
+2026-07-26T16:41:55.895376 | info | Risk check: medium
+2026-07-26T16:41:55.895376 | error | Transaction failed: Insufficient funds
+2026-07-26T16:41:55.896389 | info | Risk check: low
+2026-07-26T16:41:55.896389 | error | Transaction failed: Recipient not found
+2026-07-26T16:41:55.896389 | info | Risk check: low
+2026-07-26T16:41:55.896389 | info | Risk check: low
+2026-07-26T16:41:55.896389 | info | Risk check: low
+2026-07-26T16:41:55.896389 | info | Risk check: low
+2026-07-26T16:41:55.896389 | info | Risk check: low
+2026-07-26T16:41:55.897385 | error | Transaction failed: Recipient not found
+2026-07-26T16:41:55.897385 | info | Risk check: medium
+2026-07-26T16:41:55.897385 | error | Transaction failed: Insufficient funds
+2026-07-26T16:41:55.897385 | info | Risk check: low
+2026-07-26T16:41:55.897385 | info | Risk check: low
+2026-07-26T16:41:55.897385 | info | Risk check: low
+2026-07-26T16:41:55.897385 | info | Risk check: low
+2026-07-26T16:41:55.897385 | error | Transaction failed: Recipient not found
+2026-07-26T16:41:55.898377 | info | Risk check: low
+2026-07-26T16:41:55.898377 | info | Risk check: low
+2026-07-26T16:41:55.898377 | info | Risk check: medium
+2026-07-26T16:41:55.898377 | error | Transaction failed: Insufficient funds
+2026-07-26T16:41:55.898377 | info | Risk check: low
+2026-07-26T16:41:55.898377 | info | Risk check: low
+2026-07-26T16:41:55.898377 | error | Transaction failed: Recipient not found
+2026-07-26T16:41:55.898377 | info | Risk check: low
+2026-07-26T16:41:55.899388 | info | Risk check: low
+2026-07-26T16:41:55.899388 | info | Risk check: low
+2026-07-26T16:41:55.899388 | info | Risk check: low
+2026-07-26T16:41:55.899388 | info | Risk check: low
+2026-07-26T16:41:55.899388 | error | Transaction failed: Recipient not found
+2026-07-26T16:41:55.899388 | info | Risk check: low
+2026-07-26T16:41:55.899388 | info | Risk check: low
+2026-07-26T16:41:55.899388 | info | Risk check: low
+2026-07-26T16:41:55.900385 | info | Risk check: low
+2026-07-26T17:32:47.943070 | info | Risk check: low
+2026-07-26T17:32:47.943070 | error | Transaction failed: Recipient not found
+2026-07-26T17:32:47.944049 | info | Risk check: low
+2026-07-26T17:32:47.944296 | info | Risk check: low
+2026-07-26T17:32:47.944296 | info | Risk check: low
+2026-07-26T17:32:47.944296 | info | Risk check: low
+2026-07-26T17:32:47.944296 | info | Risk check: low
+2026-07-26T17:32:47.944296 | error | Transaction failed: Recipient not found
+2026-07-26T17:32:47.945363 | info | Risk check: low
+2026-07-26T17:32:47.946357 | info | Risk check: medium
+2026-07-26T17:32:47.946357 | error | Transaction failed: Insufficient funds
+2026-07-26T17:32:47.947367 | info | Risk check: low
+2026-07-26T17:32:47.947367 | info | Risk check: low
+2026-07-26T17:32:47.947367 | info | Risk check: low
+2026-07-26T17:32:47.947367 | error | Transaction failed: Recipient not found
+2026-07-26T17:32:47.947367 | info | Risk check: low
+2026-07-26T17:32:47.947367 | info | Risk check: low
+2026-07-26T17:32:47.947367 | info | Risk check: low
+2026-07-26T17:32:47.948379 | info | Risk check: low
+2026-07-26T17:32:47.948379 | error | Transaction failed: Recipient not found
+2026-07-26T17:32:47.948379 | info | Risk check: low
+2026-07-26T17:32:47.948379 | info | Risk check: low
+2026-07-26T17:32:47.948379 | info | Risk check: low
+2026-07-26T17:32:47.948379 | info | Risk check: low
+2026-07-26T17:32:47.949309 | error | Transaction failed: Recipient not found
+2026-07-26T17:32:47.949309 | info | Risk check: medium
+2026-07-26T17:32:47.949309 | error | Transaction failed: Insufficient funds
+2026-07-26T17:32:47.949309 | info | Risk check: low
+2026-07-26T17:32:47.950305 | info | Risk check: low
+2026-07-26T17:32:47.950305 | info | Risk check: low
+2026-07-26T17:32:47.950305 | info | Risk check: low
+2026-07-26T17:32:47.950305 | error | Transaction failed: Recipient not found
+2026-07-26T17:32:47.950305 | info | Risk check: low
+2026-07-26T17:32:47.950305 | info | Risk check: medium
+2026-07-26T17:32:47.950305 | info | Risk check: low
+2026-07-26T17:32:47.950305 | info | Risk check: low
+2026-07-26T17:32:47.951305 | error | Transaction failed: Recipient not found
+2026-07-26T17:32:47.951305 | info | Risk check: low
+2026-07-26T17:32:47.951305 | info | Risk check: low
+2026-07-26T17:32:47.951305 | info | Risk check: low
+2026-07-26T17:32:47.951305 | info | Risk check: low
+2026-07-26T17:32:47.951305 | error | Transaction failed: Overdraft limit exceeded
+2026-07-26T17:32:47.951305 | info | Risk check: low
+2026-07-26T17:32:47.951305 | error | Transaction failed: Recipient not found
+2026-07-26T17:32:47.951305 | info | Risk check: low
+2026-07-26T17:32:47.952304 | info | Risk check: low
+2026-07-26T17:32:47.952304 | info | Risk check: low
+2026-07-26T17:32:47.952304 | info | Risk check: low
+2026-07-26T17:35:47.318564 | info | Risk check: low
+2026-07-26T17:35:47.318564 | error | Transaction failed: Recipient not found
+2026-07-26T17:35:47.318564 | info | Risk check: low
+2026-07-26T17:35:47.319546 | info | Risk check: low
+2026-07-26T17:35:47.319546 | info | Risk check: low
+2026-07-26T17:35:47.319546 | info | Risk check: low
+2026-07-26T17:35:47.319546 | error | Transaction failed: Recipient not found
+2026-07-26T17:35:47.319546 | info | Risk check: medium
+2026-07-26T17:35:47.320545 | error | Transaction failed: Insufficient funds
+2026-07-26T17:35:47.320545 | info | Risk check: low
+2026-07-26T17:35:47.320545 | info | Risk check: low
+2026-07-26T17:35:47.320545 | info | Risk check: low
+2026-07-26T17:35:47.320545 | error | Transaction failed: Recipient not found
+2026-07-26T17:35:47.320545 | info | Risk check: low
+2026-07-26T17:35:47.320545 | info | Risk check: low
+2026-07-26T17:35:47.321591 | info | Risk check: low
+2026-07-26T17:35:47.321591 | info | Risk check: medium
+2026-07-26T17:35:47.321591 | error | Transaction failed: Insufficient funds
+2026-07-26T17:35:47.321591 | info | Risk check: low
+2026-07-26T17:35:47.321591 | error | Transaction failed: Recipient not found
+2026-07-26T17:35:47.321591 | info | Risk check: low
+2026-07-26T17:35:47.321591 | info | Risk check: high
+2026-07-26T17:35:47.321591 | critical | Transaction blocked (high risk)
+2026-07-26T17:35:47.322592 | info | Risk check: low
+2026-07-26T17:35:47.322592 | info | Risk check: low
+2026-07-26T17:35:47.322592 | info | Risk check: low
+2026-07-26T17:35:47.322592 | error | Transaction failed: Recipient not found
+2026-07-26T17:35:47.322592 | info | Risk check: medium
+2026-07-26T17:35:47.322592 | error | Transaction failed: Insufficient funds
+2026-07-26T17:35:47.322592 | info | Risk check: low
+2026-07-26T17:35:47.322592 | info | Risk check: low
+2026-07-26T17:35:47.323592 | info | Risk check: low
+2026-07-26T17:35:47.323592 | info | Risk check: low
+2026-07-26T17:35:47.323592 | error | Transaction failed: Recipient not found
+2026-07-26T17:35:47.323592 | info | Risk check: low
+2026-07-26T17:35:47.323592 | info | Risk check: low
+2026-07-26T17:35:47.323592 | info | Risk check: medium
+2026-07-26T17:35:47.323592 | error | Transaction failed: Overdraft limit exceeded
+2026-07-26T17:35:47.324592 | info | Risk check: low
+2026-07-26T17:35:47.324592 | info | Risk check: low
+2026-07-26T17:35:47.324592 | error | Transaction failed: Recipient not found
+2026-07-26T17:35:47.324592 | info | Risk check: low
+2026-07-26T17:35:47.324592 | info | Risk check: high
+2026-07-26T17:35:47.324592 | critical | Transaction blocked (high risk)
+2026-07-26T17:35:47.324592 | info | Risk check: low
+2026-07-26T17:35:47.324592 | info | Risk check: high
+2026-07-26T17:35:47.324592 | critical | Transaction blocked (high risk)
+2026-07-26T17:35:47.325592 | info | Risk check: low
+2026-07-26T17:35:47.325592 | info | Risk check: low
+2026-07-26T17:35:47.325592 | info | Risk check: low

@@ -1,0 +1,5 @@
+bank_name: Sberbank
+client_count: 7
+account_count: 11
+total_balance: 284900.0
+top_clients: [('Morozov Igor', 60480.0), ('Smirnov Oleg', 50090.0), ('Volkova Lena', 43960.0)]

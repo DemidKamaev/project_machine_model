@@ -6,6 +6,7 @@ from TransactionProcessor import TransactionProcessor
 from audit_log import AuditLog
 from risk_analyzer import RiskAnalyzer
 from audit_report import AuditReport
+from report_builder import RepostBuilder
 
 
 def main():
@@ -162,6 +163,23 @@ def main():
 
     print("\n=== Total balance ===")
     print(bank.get_total_balance())
+
+    builder = RepostBuilder(bank, analyzer, audit)
+    print(builder.build_bank_report())
+
+    path = builder.export_to_json(builder.build_bank_report(), "bank_report.json")
+    print("Saved:", path)
+
+    print("Saved", builder.export_top_clients_csv())
+
+    acc_id = accounts[0].account_id
+
+    for path in builder.save_charts(
+        accounts[0].account_id, transactions
+    ):
+        print("Saved", path)
+
+    print("Saved:", builder.export_to_text(builder.build_bank_report(), "bank_report.txt"))
 
 
 if __name__ == "__main__":
