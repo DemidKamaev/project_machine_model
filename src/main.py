@@ -1,12 +1,10 @@
-from src.BankAccount import BankAccount
-from src.AbstractAccount import AbstractAccount
-from src.exceptions import AccountFrozenError
-from src.SavingsAccount import SavingsAccount
-from src.PremiumAccount import PremiumAccount
-from src.InvestmentAccount import InvestmentAccount
-from src.Client import Client
-from src.Bank import Bank
-from exceptions import ClientBlockedError
+from BankAccount import BankAccount
+from AbstractAccount import AbstractAccount
+from exceptions import AccountFrozenError
+from SavingsAccount import SavingsAccount
+from PremiumAccount import PremiumAccount
+from InvestmentAccount import InvestmentAccount
+from Bank import Bank
 
 acc = BankAccount(owner="Demid")
 acc.deposit(10000)
@@ -44,40 +42,13 @@ acc_4_invest.buy_asset("stocks", 5000)
 print(f"Growth: {acc_4_invest.project_yearly_growth()}")
 print(acc_4_invest)
 
-client = Client(
-    full_name="Ivanov Ivan",
-    birth_year=1990,
-    contacts={"phone": "+7999", "email": "ivan@mail.ru", "pin": "1234"},
-)
-
-print(client)
-
 bank = Bank()
-# acc_5 = bank.open_account(
-#     client.client_id,
-#     "savings",
-#     min_balance=500,
-#     monthly_rate=0.005
-# )
-# acc_5.deposit(5000)
-#
-# # freeze
-# bank.freeze_account(acc_5.account_id)
-# print(acc_5.status)
-#
-# # unfreeze
-# bank.unfreeze_account(acc_5.account_id)
-#
-# # search
-# for a in bank.search_accounts("Ivanov"):
-#     print(a)
-#
-# # close
-# while acc_5.balance > acc_5.min_balance:
-#     acc_5.withdraw(min(500, acc_5.balance - acc_5.min_balance))
-# bank.close_account(acc_5.account_id)
-# print(acc_5.status)
-
+client = bank.add_client(
+    "Ivanov Ivan",
+    1990,
+    {"phone": "+7999", "email": "ivan@mail.ru", "pin": "1234"},
+)
+print(client)
 
 print("\n=== 3. Открытие счетов ===")
 acc_savings: SavingsAccount = bank.open_account(
@@ -98,3 +69,8 @@ print(acc_savings)
 print(acc_premium)
 print(acc_investment)
 print(f"Projected growth: {acc_investment.project_yearly_growth()}")
+
+"""Check negative testcase"""
+# BankAccount(owner="")  # error: raise InvalidOperationError("Owner name cannot be empty")
+# BankAccount(owner="", balance=-1)  # error: raise InvalidOperationError("Owner name cannot be empty")
+# BankAccount(owner="X", status="bad")  # error: raise InvalidOperationError(f"Invalid account status: {status}")

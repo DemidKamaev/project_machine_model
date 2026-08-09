@@ -4,7 +4,7 @@ import json
 import matplotlib.pyplot as plt
 
 
-class RepostBuilder:
+class ReportBuilder:
     def __init__(self, bank, analyzer, audit_log, output_dir: str = "reports"):
         self.bank = bank
         self.analyzer = analyzer
@@ -95,12 +95,12 @@ class RepostBuilder:
     def chart_top_clients_bar(self, filename: str = "top_clients_bar.png") -> Path:
         ranking = self.bank.get_clients_ranking()[:3]
         names = [name for name, total in ranking]
-        totals = [name for name, total in ranking]
+        totals = [total for name, total in ranking]
 
         fig, ax = plt.subplots()
         ax.bar(names, totals)
         ax.set_title("Top-3 clients")
-        ax.set_label("Balance")
+        ax.set_ylabel("Balance")
         plt.xticks(rotation=15)
 
         path = self.output_dir / filename

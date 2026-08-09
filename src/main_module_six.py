@@ -6,7 +6,7 @@ from TransactionProcessor import TransactionProcessor
 from audit_log import AuditLog
 from risk_analyzer import RiskAnalyzer
 from audit_report import AuditReport
-from report_builder import RepostBuilder
+from report_builder import ReportBuilder
 
 
 def main():
@@ -164,7 +164,7 @@ def main():
     print("\n=== Total balance ===")
     print(bank.get_total_balance())
 
-    builder = RepostBuilder(bank, analyzer, audit)
+    builder = ReportBuilder(bank, analyzer, audit)
     print(builder.build_bank_report())
 
     path = builder.export_to_json(builder.build_bank_report(), "bank_report.json")

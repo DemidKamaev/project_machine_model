@@ -32,7 +32,7 @@ class TransactionProcessor:
 
     # --- rules ---
     def validate(self, tx: Transaction) -> Optional[str]:
-        """None = ok, иначе текст ошибки"""
+        """None = ok, or text error"""
         sender = self.bank.accounts.get(tx.sender_id)
         recipient = self.bank.accounts.get(tx.recipient_id)
 
@@ -46,14 +46,18 @@ class TransactionProcessor:
             return "Sender account closed"
         if recipient.status == AbstractAccount.STATUS_FROZEN:
             return "Recipient account frozen"
+        if recipient.status == AbstractAccount.STATUS_CLOSED:
+            return "Recipient account closed"
 
         commission = self.calculate_commission(tx)
-        total = tx.amount + commission
+        amount_in_sender = self.convert_currency(tx.amount, tx.currency, sender.currency)
+        commission_in_sender = self.convert_currency(commission, tx.currency, sender.currency)
+        total = amount_in_sender + commission_in_sender
 
         if not isinstance(sender, PremiumAccount):
             if sender.balance < total:
                 return "Insufficient funds"
-            
+
         return None
 
     def process_one(self, tx: Transaction) -> bool:
@@ -67,12 +71,12 @@ class TransactionProcessor:
         recipient = self.bank.accounts[tx.recipient_id]
 
         tx.commission = self.calculate_commission(tx)
-        amount_to_receive = self.convert_currency(
-            tx.amount, tx.currency, recipient.currency
-        )
+        amount_in_sender = self.convert_currency(tx.amount, tx.currency, sender.currency)
+        commission_in_sender = self.convert_currency(tx.commission, tx.currency, sender.currency)
+        amount_to_receive = self.convert_currency(tx.amount, tx.currency, recipient.currency)
 
         try:
-            sender.withdraw(tx.amount + tx.commission)
+            sender.withdraw(amount_in_sender + commission_in_sender)
             recipient.deposit(amount_to_receive)
             tx.mark_completed()
             return True
