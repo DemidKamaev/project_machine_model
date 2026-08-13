@@ -12,6 +12,12 @@ class PremiumAccount(BankAccount):
             **kwargs,
     ):
         super().__init__(owner=owner, **kwargs)
+        if withdraw_limit < 0:
+            raise InvalidOperationError("withdraw_limit cannot be negative")
+        if overdraft_limit < 0:
+            raise InvalidOperationError("overdraft_limit cannot be negative")
+        if commission < 0:
+            raise InvalidOperationError("commission cannot be negative")
         self.withdraw_limit = withdraw_limit
         self.overdraft_limit = overdraft_limit
         self.commission = commission

@@ -11,6 +11,12 @@ class SavingsAccount(BankAccount):
             **kwargs,
     ):
         super().__init__(owner=owner, **kwargs)
+        if min_balance < 0:
+            raise InvalidOperationError("min_balance cannot be negative")
+        if monthly_rate < 0:
+            raise InvalidOperationError("monhly_rate cannot be negative")
+        if self.balance < min_balance:
+            raise InvalidOperationError("Initial balance is below minimum balance")
         self.min_balance = min_balance
         self.monthly_rate = monthly_rate
 

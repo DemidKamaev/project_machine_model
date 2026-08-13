@@ -11,12 +11,12 @@ acc.deposit(10000)
 acc.withdraw(350)
 print(acc)
 
-
-# acc_frozen = BankAccount(owner="Test", status=AbstractAccount.STATUS_FROZEN)
-# try:
-#     acc_frozen.deposit(1000)
-# except AccountFrozenError as e:
-#     print(e)
+print("\n=== Frozen account demo ===")
+acc_frozen = BankAccount(owner="Test", status=AbstractAccount.STATUS_FROZEN)
+try:
+    acc_frozen.deposit(1000)
+except AccountFrozenError as e:
+    print("Expected error:", e)
 
 acc_1 = SavingsAccount(owner="Test_1", min_balance=500, monthly_rate=0.06)
 acc_1.deposit(1000)
