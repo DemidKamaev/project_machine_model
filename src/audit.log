@@ -40,3 +40,13 @@
 2026-07-25T21:21:41.835049 | info | Risk check: medium
 2026-07-25T21:21:41.835049 | info | Risk check: high
 2026-07-25T21:21:41.835049 | critical | Transaction blocked (high risk)
+2026-08-16T16:23:35.421703 | info | Risk check: low
+2026-08-16T16:23:35.421703 | info | Risk check: medium
+2026-08-16T16:23:35.422829 | info | Risk check: medium
+2026-08-16T16:23:35.422829 | info | Risk check: low
+2026-08-16T16:23:35.422829 | info | Risk check: low
+2026-08-16T16:23:35.423796 | info | Risk check: medium
+2026-08-16T16:23:35.423796 | info | Risk check: medium
+2026-08-16T16:23:35.424768 | info | Risk check: medium
+2026-08-16T16:23:35.424768 | info | Risk check: high
+2026-08-16T16:23:35.425842 | critical | Transaction blocked (high risk)

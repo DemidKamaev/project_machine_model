@@ -81,35 +81,4 @@ class RiskAnalyzer:
         return risk == self.RISK_HIGH
 
     def process_one(self, tx: Transaction) -> bool:
-        risk = self.analyze(tx)
-
-        # We always write to the audit what the risk was
-        self.audit_log.record(
-            self.audit_log.LEVEL_INFO,
-            f"Risk check: {risk}",
-            tx_id=tx.transaction_id,
-            sender_id=tx.sender_id,
-            amount=tx.amount,
-            risk=risk,
-        )
-
-        # self. - method this is object
-        if self.should_block(risk):
-            tx.mark_failed("Blocked: high risk")
-            self.audit_log.record(
-                self.audit_log.LEVEL_CRITICAL,
-                "Transaction blocked (high risk)",
-                tx_id=tx.transaction_id,
-                risk=risk
-            )
-            return False
-
-        # risk not high -> normal transaction processing
-        ok = self.processor.process_one(tx)
-        if not ok:
-            self.audit_log.record(
-                self.audit_log.LEVEL_ERROR,
-                f"Transaction failed: {tx.failure_reason}",
-                tx_id=tx.transaction_id,
-            )
-        return ok
+        return self.processor.process_one(tx)

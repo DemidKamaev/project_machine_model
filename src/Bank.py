@@ -16,6 +16,8 @@ class Bank:
         "premium": PremiumAccount,
         "investment": InvestmentAccount
     }
+    RATES = {"RUB": 1.0, "USD": 90.0, "EUR": 98.0, "KZT": 0.2, "CNY": 12.5}
+    BASE_CURRENCY = "RUB"
 
     def __init__(self, name: str = "Sberbank"):
         self.name = name
@@ -43,6 +45,12 @@ class Bank:
     def _log_suspicious(self, message: str) -> None:
         entry = f"{datetime.now().isoformat()} | {message}"
         self.suspicious_actions.append(entry)
+
+    def _convert_currency(self, amount: float, from_cur: str, to_cur: str) -> float:
+        if from_cur == to_cur:
+            return amount
+        in_rub = amount * self.RATES[from_cur]
+        return round(in_rub / self.RATES[to_cur], 2)
 
     # --- clients --------------------------
 
@@ -150,20 +158,31 @@ class Bank:
         return result
 
     def get_total_balance(self) -> float:
-        return sum(
-            account.balance
-            for account in self.accounts.values()
-            if account.status != AbstractAccount.STATUS_CLOSED
-        )
+        total = 0.0
+        for account in self.accounts.values():
+            if account.status != AbstractAccount.STATUS_CLOSED:
+                total += self._convert_currency(
+                    account.balance,
+                    account.currency,
+                    self.BASE_CURRENCY,
+                )
+        return round(total, 2)
 
     def get_clients_ranking(self) -> list[tuple[str, float]]:
         ranking = []
         for client in self.clients.values():
-            total = sum(
-                self.accounts[acc_id].balance
-                for acc_id in client.account_ids
-                if acc_id in self.accounts
-            )
-            ranking.append((client.full_name, total))
+            total = 0.0
+            for acc_id in client.account_ids:
+                if acc_id not in self.accounts:
+                    continue
+                acc = self.accounts[acc_id]
+                if acc.status == AbstractAccount.STATUS_CLOSED:
+                    continue
+                total += self._convert_currency(
+                    acc.balance,
+                    acc.currency,
+                    self.BASE_CURRENCY,
+                )
+            ranking.append((client.full_name, round(total, 2)))
         ranking.sort(key=lambda item: item[1], reverse=True)
         return ranking

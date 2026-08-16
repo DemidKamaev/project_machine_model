@@ -2,6 +2,8 @@ from Bank import Bank
 from Transaction import Transaction
 from TransactionQueue import TransactionQueue
 from TransactionProcessor import TransactionProcessor
+from audit_log import AuditLog
+from risk_analyzer import RiskAnalyzer
 
 
 def main():
@@ -22,7 +24,10 @@ def main():
 
     # --- queue + processor ---
     queue = TransactionQueue()
+    audit = AuditLog("audit_day3.log")
     processor = TransactionProcessor(bank, queue)
+    analyzer = RiskAnalyzer(bank, audit, processor)
+    processor.risk_analyzer = analyzer
 
     transactions = []
 

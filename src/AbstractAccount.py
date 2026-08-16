@@ -17,7 +17,14 @@ class AbstractAccount(ABC):
 
     ALLOWED_STATUSES = {STATUS_ACTIVE, STATUS_FROZEN, STATUS_CLOSED}
 
-    def __init__(self, account_id: str, owner: str, balance: float = 0.0, status: str = STATUS_ACTIVE):
+    def __init__(
+            self,
+            account_id: str,
+            owner: str,
+            balance: float = 0.0,
+            status: str = STATUS_ACTIVE,
+            currency: str = "RUB"
+    ):
         if not owner or not str(owner).strip():
             raise InvalidOperationError("Owner name cannot be empty")
         if balance < 0:
@@ -29,6 +36,7 @@ class AbstractAccount(ABC):
         self.owner = owner
         self._balance = balance
         self.status = status
+        self.currency = currency
 
     @property
     def balance(self):

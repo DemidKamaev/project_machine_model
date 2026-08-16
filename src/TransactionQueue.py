@@ -43,7 +43,7 @@ class TransactionQueue:
             if tx.transaction_id in self.deferred:
                 if datetime.now() < self.deferred[tx.transaction_id]:
                     self.normal.append(tx)
-                    return None
+                    continue
                 del self.deferred[tx.transaction_id]
 
             return tx

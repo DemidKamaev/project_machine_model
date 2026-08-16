@@ -60,6 +60,7 @@ def main():
     audit = AuditLog("audit_module6.log")
     processor = TransactionProcessor(bank, queue)
     analyzer = RiskAnalyzer(bank, audit, processor)
+    processor.risk_analyzer = analyzer
     transactions = []
 
     for i in range(40):

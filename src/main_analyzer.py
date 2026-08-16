@@ -21,6 +21,7 @@ queue = TransactionQueue()
 audit = AuditLog("audit.log")
 processor = TransactionProcessor(bank, queue)
 analyzer = RiskAnalyzer(bank, audit, processor)
+processor.risk_analyzer = analyzer
 
 report = AuditReport(analyzer, audit)
 

@@ -18,7 +18,7 @@ try:
 except AccountFrozenError as e:
     print("Expected error:", e)
 
-acc_1 = SavingsAccount(owner="Test_1", min_balance=500, monthly_rate=0.06)
+acc_1 = SavingsAccount(owner="Test_1", min_balance=500, monthly_rate=0.06, balance=1000)
 acc_1.deposit(1000)
 acc_1.apply_monthly_interest()
 print(acc_1)
@@ -56,6 +56,7 @@ acc_savings: SavingsAccount = bank.open_account(
     "savings",
     min_balance=500,
     monthly_rate=0.005,
+    balance=500,
 )
 acc_premium = bank.open_account(client.client_id, "premium")
 acc_investment = bank.open_account(client.client_id, "investment")
@@ -69,6 +70,15 @@ print(acc_savings)
 print(acc_premium)
 print(acc_investment)
 print(f"Projected growth: {acc_investment.project_yearly_growth()}")
+
+
+print("\n=== Currency Convert test")
+acc_usd = bank.open_account(client.client_id, "bank", currency="USD")
+acc_usd.deposit(100)
+acc_rub = bank.open_account(client.client_id, "bank", currency="RUB")
+acc_rub.deposit(5000)
+
+print(f"Convert: {bank.get_total_balance()}")
 
 """Check negative testcase"""
 # BankAccount(owner="")  # error: raise InvalidOperationError("Owner name cannot be empty")

@@ -11,9 +11,10 @@ class TransactionProcessor:
     EXTERNAL_RATE = 0.02  # 2% commission in external
     RATES = {"RUB": 1.0, "USD": 90.0, "EUR": 98.0, "KZT": 0.2, "CNY": 12.5}
 
-    def __init__(self, bank: Bank, queue: TransactionQueue):
+    def __init__(self, bank: Bank, queue: TransactionQueue, risk_analyzer=None):
         self.bank = bank
         self.queue = queue
+        self.risk_analyzer = risk_analyzer
         self.errors: list[str] = []
         self.max_retries = 3
 
@@ -61,10 +62,40 @@ class TransactionProcessor:
         return None
 
     def process_one(self, tx: Transaction) -> bool:
+        if self.risk_analyzer is not None:
+            risk = self.risk_analyzer.analyze(tx)
+
+            self.risk_analyzer.audit_log.record(
+                self.risk_analyzer.audit_log.LEVEL_INFO,
+                f"Risk check: {risk}",
+                tx_id=tx.transaction_id,
+                sender_id=tx.sender_id,
+                amount=tx.amount,
+                risk=risk,
+            )
+
+            if self.risk_analyzer.should_block(risk):
+                tx.mark_failed("Blocked: high risk")
+                self.risk_analyzer.audit_log.record(
+                    self.risk_analyzer.audit_log.LEVEL_CRITICAL,
+                    "Transaction blocked (high risk)",
+                    tx_id=tx.transaction_id,
+                    risk=risk,
+                )
+                self.errors.append(f"{tx.transaction_id}: Blocked: high risk")
+                return False
+
         error = self.validate(tx)
+
         if error:
             tx.mark_failed(error)
             self.errors.append(f"{tx.transaction_id}: {error}")
+            if self.risk_analyzer is not None:
+                self.risk_analyzer.audit_log.record(
+                    self.risk_analyzer.audit_log.LEVEL_ERROR,
+                    f"Transaction failed: {error}",
+                    tx_id=tx.transaction_id,
+                )
             return False
 
         sender = self.bank.accounts[tx.sender_id]
@@ -83,6 +114,12 @@ class TransactionProcessor:
         except Exception as e:
             tx.mark_failed(str(e))
             self.errors.append(f"{tx.transaction_id}: {e}")
+            if self.risk_analyzer is not None:
+                self.risk_analyzer.audit_log.record(
+                    self.risk_analyzer.audit_log.LEVEL_ERROR,
+                    f"Transaction failed: {e}",
+                    tx_id=tx.transaction_id,
+                )
             return False
 
     # ── retry ──
