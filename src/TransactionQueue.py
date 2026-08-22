@@ -25,6 +25,10 @@ class TransactionQueue:
     def cancel(self, transaction_id: str):
         """Отменить перевод"""
         self.cancelled.add(transaction_id)
+        for tx in self.normal + self.priority:
+            if tx.transaction_id == transaction_id:
+                tx.mark_cancelled()
+                break
 
     def get_next(self) -> Transaction | None:
         """Взять следующий перевод для обработки"""
@@ -34,8 +38,13 @@ class TransactionQueue:
             if tx.transaction_id not in self.cancelled:
                 return tx
 
-        while self.normal:
+        # 2) Обычные
+        n = len(self.normal)
+        checked = 0
+
+        while self.normal and checked < n:
             tx = self.normal.pop(0)
+            checked += 1
 
             if tx.transaction_id in self.cancelled:
                 continue

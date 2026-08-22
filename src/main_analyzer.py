@@ -30,7 +30,7 @@ for item in report.suspicious_operations():
     print(item)
 
 print("=== Profile acc 1 ===")
-print(report.client_risk_profile(acc1.account_id))
+print(report.client_risk_profile(c1.client_id))
 
 print("=== Errors ===")
 print(report.error_status())

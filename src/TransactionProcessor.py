@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Optional
 
 from Bank import Bank
@@ -5,11 +6,17 @@ from TransactionQueue import TransactionQueue
 from AbstractAccount import AbstractAccount
 from PremiumAccount import PremiumAccount
 from Transaction import Transaction
+from exceptions import InvalidOperationError
 
 
 class TransactionProcessor:
     EXTERNAL_RATE = 0.02  # 2% commission in external
     RATES = {"RUB": 1.0, "USD": 90.0, "EUR": 98.0, "KZT": 0.2, "CNY": 12.5}
+    NON_RETRYABLE = (
+        "Blocked: high risk",
+        "Sender account frozen",
+        "Insufficient funds",
+    )
 
     def __init__(self, bank: Bank, queue: TransactionQueue, risk_analyzer=None):
         self.bank = bank
@@ -26,6 +33,9 @@ class TransactionProcessor:
 
     # --- conversion ---
     def convert_currency(self, amount: float, from_cur: str, to_cur: str) -> float:
+        if from_cur not in self.RATES or to_cur not in self.RATES:
+            raise InvalidOperationError(f"Unsupperted currency: {from_cur} or {to_cur}")
+
         if from_cur == to_cur:
             return amount
         in_rub = amount * self.RATES[from_cur]
@@ -49,6 +59,8 @@ class TransactionProcessor:
             return "Recipient account frozen"
         if recipient.status == AbstractAccount.STATUS_CLOSED:
             return "Recipient account closed"
+        if tx.currency not in self.RATES:
+            return "Unsupported transaction currency"
 
         commission = self.calculate_commission(tx)
         amount_in_sender = self.convert_currency(tx.amount, tx.currency, sender.currency)
@@ -62,6 +74,15 @@ class TransactionProcessor:
         return None
 
     def process_one(self, tx: Transaction) -> bool:
+
+        if self.bank.enforce_night_ban:
+            hour = datetime.now().hour
+            if 0 <= hour < 5:
+                msg = "Operations unavailable from 00:00 to 05:00"
+                tx.mark_failed(msg)
+                self.errors.append(f"{tx.transaction_id}: {msg}")
+                return False
+
         if self.risk_analyzer is not None:
             risk = self.risk_analyzer.analyze(tx)
 
@@ -127,9 +148,14 @@ class TransactionProcessor:
         for attempt in range(1, self.max_retries + 1):
             if self.process_one(tx):
                 return True
+            reason = tx.failure_reason or ""
+            if any(r in reason for r in self.NON_RETRYABLE):
+                return False
             if tx.status != Transaction.STATUS_FAILED:
                 break
-            tx.status = Transaction.STATUS_PENDING  # сброс для повтора
+            tx.status = Transaction.STATUS_PENDING
+        if tx.status == Transaction.STATUS_FAILED and tx.failure_reason:
+            return False
         tx.mark_failed("Max retries exceeded")
         return False
 

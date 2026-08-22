@@ -16,11 +16,13 @@ class AuditReport:
         return result
 
     # 2) risk profile by sender (account)
-    def client_risk_profile(self, sender_id: str) -> dict:
+    def client_risk_profile(self, client_id: str) -> dict:
         low = medium = high = blocked = 0
+        client = self.analyzer.bank.clients[client_id]
+        account_ids = set(client.account_ids)
 
         for entry in self.analyzer._risk_history:
-            if entry["sender_id"] != sender_id:
+            if entry["sender_id"] not in account_ids:
                 continue
             if entry["risk"] == RiskAnalyzer.RISK_LOW:
                 low += 1
@@ -31,7 +33,8 @@ class AuditReport:
                 blocked += 1
 
         return {
-            "sender_id": sender_id,
+            "client_id": client_id,
+            "full_name": client.full_name,
             "low": low,
             "medium": medium,
             "high": high,
