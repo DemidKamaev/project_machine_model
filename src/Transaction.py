@@ -1,5 +1,6 @@
 import uuid
 from datetime import datetime
+from exceptions import InvalidOperationError
 
 
 class Transaction:
@@ -17,6 +18,11 @@ class Transaction:
             sender_id: str,
             recipient_id: str
     ):
+        if amount <= 0:
+            raise InvalidOperationError("Amount must be > 0")
+        if commission < 0:
+            raise InvalidOperationError("Commission cannot be negative")
+
         self.transaction_id = str(uuid.uuid4())[:8]
         self.type = type
         self.amount = amount
@@ -47,3 +53,12 @@ class Transaction:
             f"TX {self.transaction_id} | {self.type} | {self.amount} | {self.currency} | "
             f"{self.sender_id} -> {self.recipient_id} | {self.status}"
         )
+
+
+# a = Transaction("transfer", 100, "RUB", -50, "a", "b")
+# b = Transaction("transfer", 0, "RUB", 0, "a", "b")
+c = Transaction("transfer", 100, "RUB", 0, "a", "b")
+
+# print(a)
+# print(b)
+print(c)
