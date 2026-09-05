@@ -46,7 +46,7 @@ class RiskAnalyzer:
             self._known_recipients_map[tx.sender_id] = set()
         self._known_recipients_map[tx.sender_id].add(tx.recipient_id)
 
-    def analyze(self, tx: Transaction) -> str:
+    def analyze(self, tx: Transaction) -> tuple[str, int]:
         score = 0
 
         if tx.amount >= self.LARGE_AMOUNT:
@@ -65,6 +65,9 @@ class RiskAnalyzer:
         else:
             risk = self.RISK_LOW
 
+        return risk, score
+
+    def record_success(self, tx: Transaction, risk: str, score: int) -> None:
         self._risk_history.append({
             "tx_id": tx.transaction_id,
             "sender_id": tx.sender_id,
@@ -75,7 +78,6 @@ class RiskAnalyzer:
             "timestamp": datetime.now().isoformat(),
         })
         self._track(tx)
-        return risk
 
     def should_block(self, risk: str) -> bool:
         return risk == self.RISK_HIGH

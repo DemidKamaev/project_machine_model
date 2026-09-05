@@ -29,6 +29,8 @@ class TransactionProcessor:
     def calculate_commission(self, tx: Transaction) -> float:
         if tx.type == "external":
             return round(tx.amount * self.EXTERNAL_RATE, 2)
+        if tx.commission < 0:
+            raise InvalidOperationError("Commission cannot be negative")
         return tx.commission
 
     # --- conversion ---
@@ -83,8 +85,22 @@ class TransactionProcessor:
                 self.errors.append(f"{tx.transaction_id}: {msg}")
                 return False
 
+        error = self.validate(tx)
+        if error:
+            tx.mark_failed(error)
+            self.errors.append(f"{tx.transaction_id}: {error}")
+            if self.risk_analyzer is not None:
+                self.risk_analyzer.audit_log.record(
+                    self.risk_analyzer.audit_log.LEVEL_ERROR,
+                    f"Transaction failed: {error}",
+                    tx_id=tx.transaction_id,
+                )
+            return False
+
+        risk = None
+        score = None
         if self.risk_analyzer is not None:
-            risk = self.risk_analyzer.analyze(tx)
+            risk, score = self.risk_analyzer.analyze(tx)
 
             self.risk_analyzer.audit_log.record(
                 self.risk_analyzer.audit_log.LEVEL_INFO,
@@ -106,19 +122,6 @@ class TransactionProcessor:
                 self.errors.append(f"{tx.transaction_id}: Blocked: high risk")
                 return False
 
-        error = self.validate(tx)
-
-        if error:
-            tx.mark_failed(error)
-            self.errors.append(f"{tx.transaction_id}: {error}")
-            if self.risk_analyzer is not None:
-                self.risk_analyzer.audit_log.record(
-                    self.risk_analyzer.audit_log.LEVEL_ERROR,
-                    f"Transaction failed: {error}",
-                    tx_id=tx.transaction_id,
-                )
-            return False
-
         sender = self.bank.accounts[tx.sender_id]
         recipient = self.bank.accounts[tx.recipient_id]
 
@@ -131,6 +134,8 @@ class TransactionProcessor:
             sender.withdraw(amount_in_sender + commission_in_sender)
             recipient.deposit(amount_to_receive)
             tx.mark_completed()
+            if self.risk_analyzer is not None:
+                self.risk_analyzer.record_success(tx, risk, score)
             return True
         except Exception as e:
             tx.mark_failed(str(e))

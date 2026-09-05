@@ -3,6 +3,9 @@ from pathlib import Path
 import json
 import matplotlib.pyplot as plt
 
+from src.main_analyzer import processor
+from PremiumAccount import PremiumAccount
+
 
 class ReportBuilder:
     def __init__(self, bank, analyzer, audit_log, output_dir: str = "reports"):
@@ -114,16 +117,36 @@ class ReportBuilder:
             transactions: list,
             filename: str = "balance_flow.png"
     ) -> Path:
+        account = self.bank.accounts[account_id]
+        processor = self.analyzer.processor
+
         changes = []
         for tx in transactions:
             if tx.status != "completed":
                 continue
-            if tx.sender_id == account_id:
-                changes.append(-tx.amount)
-            elif tx.recipient_id == account_id:
-                changes.append(tx.amount)
 
-        current = self.bank.accounts[account_id].balance
+            if tx.sender_id == account_id:
+                amount_in_acc = processor.convert_currency(
+                    tx.amount, tx.currency, account.currency
+                )
+                commission = processor.calculate_commission(tx)
+                commission_in_acc = processor.convert_currency(
+                    commission, tx.currency, account.currency
+                )
+                delta = -(amount_in_acc + commission_in_acc)
+
+                if isinstance(account, PremiumAccount):
+                    delta -= account.commission
+
+                changes.append(delta)
+
+            elif tx.recipient_id == account_id:
+                amount_in_acc = processor.convert_currency(
+                    tx.amount, tx.currency, account.currency
+                )
+                changes.append(amount_in_acc)
+
+        current = account.balance
         start = current - sum(changes)
 
         balances = [start]

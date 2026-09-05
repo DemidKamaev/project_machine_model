@@ -57,6 +57,9 @@ class AsyncCrawler:
         if self._session and not self._session.closed:
             await self._session.close()
 
+    async def fetch_and_parse(self, url: str) -> dict:
+        pass
+
 
 async def _test():
     crawler = AsyncCrawler(max_concurrent=3)

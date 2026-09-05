@@ -40,6 +40,7 @@ def main():
             acc = bank.open_account(
                 client.client_id,
                 "savings",
+                balance=1000.0,
                 min_balance=1000.0,
                 monthly_rate=0.01,
             )
