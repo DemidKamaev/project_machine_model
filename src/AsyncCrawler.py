@@ -2,6 +2,7 @@ import asyncio
 import logging
 
 import aiohttp
+from HTMLParser import HTMLParser
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 logger = logging.getLogger(__name__)
@@ -11,6 +12,7 @@ class AsyncCrawler:
     def __init__(self, max_concurrent: int = 10):
         self.max_concurrent = max_concurrent
         self._semaphore = asyncio.Semaphore(max_concurrent)
+        self.parser = HTMLParser()
 
         timeout = aiohttp.ClientTimeout(connect=5, total=10)
         self._session = aiohttp.ClientSession(timeout=timeout)
@@ -58,7 +60,8 @@ class AsyncCrawler:
             await self._session.close()
 
     async def fetch_and_parse(self, url: str) -> dict:
-        pass
+        html = await self.fetch_url(url)
+        return await self.parser.parse_html(html, url)
 
 
 async def _test():
