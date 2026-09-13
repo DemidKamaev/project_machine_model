@@ -1,5 +1,8 @@
 import asyncio
+import json
 import time
+from pathlib import Path
+
 import aiohttp
 
 from AsyncCrawler import AsyncCrawler
@@ -130,10 +133,54 @@ async def demo_parse():
         await crawler.close()
 
 
+async def demo_crawl():
+    crawler = AsyncCrawler(max_concurrent=5, max_depth=2)
+    try:
+        results = await crawler.crawl(
+            start_urls=["https://example.com"],
+            max_pages=20,
+            same_domain_only=True,
+        )
+
+        print(f"Обработано: {len(results)} страниц")
+        print(f"Ошибок: {len(crawler.failed_urls)}")
+        print(f"Visited: {len(crawler.visited_urls)}")
+        print(f"Stats: {crawler.queue.get_stats()}")
+
+        out_dir = Path("reports")
+        out_dir.mkdir(exist_ok=True)
+        out_file = out_dir / "crawl_results.json"
+
+        serializable = {}
+        for url, data in results.items():
+            serializable[url] = {
+                "url": data.get("url"),
+                "title": data.get("title"),
+                "text": (data.get("text") or "")[:500],
+                "links_count": len(data.get("links", [])),
+                "images_count": len(data.get("images", [])),
+            }
+
+        out_file.write_text(
+            json.dumps(serializable, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        print(f"Сохранено в {out_file}")
+
+        if crawler.failed_urls:
+            print("Failed URLs:")
+            for url, err in crawler.failed_urls.items():
+                print(f"  {url}: {err}")
+
+    finally:
+        await crawler.close()
+
+
 
 if __name__ == "__main__":
     # asyncio.run(main())
     # asyncio.run(compare())
     # asyncio.run(test_extract_text())
     # asyncio.run(test_fetch_and_parse())
-    asyncio.run(demo_parse())
+    # asyncio.run(demo_parse())
+    asyncio.run(demo_crawl())
