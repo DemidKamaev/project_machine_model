@@ -39,7 +39,8 @@ class AsyncCrawler:
             max_retries: int = 3,
             retry_backoff: float = 1.0,
             base_retry_delay: float = 1.0,
-            circuit_breaker: CircuitBreaker | None = None
+            circuit_breaker: CircuitBreaker | None = None,
+            storage = None
     ):
         self.max_concurrent = max_concurrent
         self._semaphore = asyncio.Semaphore(max_concurrent)
@@ -73,6 +74,8 @@ class AsyncCrawler:
             if max_retries > 0 else None
         )
         self.circuit_breaker = circuit_breaker
+        self.storage = storage
+        self.save_errors = 0
 
         timeout = aiohttp.ClientTimeout(connect=connect_timeout, total=total_timeout)
         self._session = aiohttp.ClientSession(timeout=timeout)
@@ -182,6 +185,8 @@ class AsyncCrawler:
     async def close(self):
         if self._session and not self._session.closed:
             await self._session.close()
+        if self.storage is not None:
+            await self.storage.close()
 
     async def fetch_and_parse(self, url: str, timeout_scale: float = 1.0) -> dict:
         html = await self.fetch_url(url, timeout_scale=timeout_scale)
@@ -191,12 +196,12 @@ class AsyncCrawler:
             raise ParseError(f"{url}: {e}") from e
 
     async def _fetch_and_parse_with_retry(self, url: str) -> dict:
-        async def _do(attempt: int = 0):
+        async def _do(target_url: str, attempt: int = 0):
             scale = 1.0 + attempt * (self.timeout_growth - 1.0)
-            return await self.fetch_and_parse(url, timeout_scale=scale)
+            return await self.fetch_and_parse(target_url, timeout_scale=scale)
 
         if self.retry_strategy is None:
-            return await _do(0)
+            return await _do(url)
         return await self.retry_strategy.execute_with_retry(
             _do, url, pass_attempt=True
         )
@@ -288,6 +293,18 @@ class AsyncCrawler:
 
         return self.processed_urls
 
+
+    async def _save_result(self, data: dict) -> None:
+        """Сохранить страницу; ошибка записи НЕ роняет краулер."""
+        if self.storage is None:
+            return
+        try:
+            await self.storage.save(data)
+        except Exception as e:
+            self.save_errors += 1
+            logger.error(f"Не удалось сохранить {data.get('url')}: {e}")
+
+
     async def _process_url(
             self,
             url: str,
@@ -301,6 +318,7 @@ class AsyncCrawler:
             data = await self._fetch_and_parse_with_retry(url)
             self.processed_urls[url] = data
             self.queue.mark_processed(url)
+            await self._save_result(data)
 
             current_depth = self._depths.get(url, 0)
             if current_depth >= self.max_depth:
